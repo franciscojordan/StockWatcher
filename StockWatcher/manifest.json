@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "StockChecker",
+  "name": "StockWatcher",
   "version": "0.2.0",
   "description": "Monitoriza productos de diversas tiendas online y avisa cuando vuelven a estar disponibles.",
   "permissions": [
