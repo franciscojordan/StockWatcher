@@ -1,0 +1,92 @@
+{
+  "manifest_version": 3,
+  "name": "StockChecker",
+  "version": "0.2.0",
+  "description": "Monitoriza productos de diversas tiendas online y avisa cuando vuelven a estar disponibles.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "tabs",
+    "sidePanel"
+  ],
+  "side_panel": {
+    "default_path": "src/popup/popup.html"
+  },
+  "host_permissions": [
+    "https://www.amazon.es/*",
+    "https://www.amazon.de/*",
+    "https://www.amazon.fr/*",
+    "https://www.amazon.it/*",
+    "https://www.amazon.co.uk/*",
+    "https://www.mediamarkt.es/*",
+    "https://www.game.es/*",
+    "https://www.elcorteingles.es/*",
+    "https://www.carrefour.es/*",
+    "https://www.fnac.es/*",
+    "https://www.pccomponentes.com/*",
+    "https://www.momostore.es/*"
+  ],
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Stock Watcher",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.es/*", "https://www.amazon.de/*", "https://www.amazon.fr/*", "https://www.amazon.co.uk/*", "https://www.amazon.it/*"],
+      "js": ["src/content/utils.js", "src/content/amazonChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.mediamarkt.es/*", "https://mediamarkt.es/*"],
+      "js": ["src/content/utils.js", "src/content/mediamarktChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.game.es/*", "https://game.es/*"],
+      "js": ["src/content/utils.js", "src/content/gameChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.elcorteingles.es/*", "https://elcorteingles.es/*"],
+      "js": ["src/content/utils.js", "src/content/elcorteinglesChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.carrefour.es/*", "https://carrefour.es/*" ],
+      "js": ["src/content/utils.js", "src/content/carrefourChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.fnac.es/*", "https://fnac.es/*"],
+      "js": ["src/content/utils.js", "src/content/fnacChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.pccomponentes.com/*", "https://pccomponentes.com/*"],
+      "js": ["src/content/utils.js", "src/content/pccomponentesChecker.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.momostore.es/*", "https://momostore.es/*"],
+      "js": ["src/content/utils.js", "src/content/momostoreChecker.js"],
+      "run_at": "document_idle"
+    }
+    
+  ]
+}

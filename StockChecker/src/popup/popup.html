@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stock Watcher</title>
+
+    <link
+        rel="stylesheet"
+        href="popup.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Stock Watcher</h1>
+            <button id="btnToggleGlobalPause" class="icon-button" title="Pausar / Reanudar todo">
+                <img id="globalPauseIcon" src="../../icons/pause.png" alt="Pausar todo">
+            </button>
+        </header>
+        
+
+        <div class="form">
+
+            <label for="name">
+                Nombre del producto
+            </label>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Nintendo Switch 2"
+            >
+
+
+            <label for="url">
+                URL del producto
+            </label>
+
+            <input
+                id="url"
+                type="url"
+                placeholder="https://www.fnac.es/..."
+            >
+
+
+            <label for="interval">
+                Comprobar cada
+            </label>
+
+            <select id="interval">
+
+                <option value="1">
+                    1 minuto
+                </option>
+
+                <option value="5" selected>
+                    5 minutos
+                </option>
+
+                <option value="10">
+                    10 minutos
+                </option>
+
+                <option value="30">
+                    30 minutos
+                </option>
+
+            </select>
+
+
+            <button id="addProduct">
+                Añadir producto
+            </button>
+
+        </div>
+
+
+        <hr>
+
+
+        <h2>Productos</h2>
+
+        <div id="products">
+            Cargando...
+        </div>
+
+    </div>
+
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>

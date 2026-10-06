@@ -1,0 +1,129 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.icon-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+#globalPauseIcon {
+    width: 25px;
+    height: 25px;
+}
+
+body {
+    width: 350px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+}
+
+.container {
+    padding: 16px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+input,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8fafc;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 9px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.product {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.product.status-out-of-stock {
+    background-color: #fde8e8;
+    border-left: 4px solid #f87171;
+}
+
+/* Estado: Indeterminado (Amarillo/Mostaza pastel) */
+.product.status-unknown {
+    background-color: #fef9c3;
+    border-left: 4px solid #facc15;
+}
+
+/* Estado: En Stock (Verde pastel) */
+.product.status-in-stock {
+    background-color: #dcfce7;
+    border-left: 4px solid #4ade80;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.status {
+    font-size: 13px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+}
+
+.button-container button,
+.button-container a {
+    box-sizing: border-box; 
+    margin-top: 8px;
+    padding: 8px 16px;      
+    line-height: 1;         
+    font-size: 14px;
+    vertical-align: middle;
+    border: none; 
+    background-color: rgba(0, 0, 0, 0.10);          
+}
